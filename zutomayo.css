@@ -1,0 +1,136 @@
+#clock{
+	height:800px;
+	width:800px;
+	position: relative;
+}
+
+#clock .clock-face{
+	border: 3px solid black;
+	background-color:white ;
+	border-radius:50%;
+	position: absolute;
+}
+
+#clock div{
+	box-sizing: border-box;
+}
+
+.clock-line1, .clock-line2{
+	position: absolute;
+	left:0;
+	z-index: 1;
+}
+
+.clock-line1{
+	width:5px;
+	height: 3px;
+	background: black;
+	top:calc(50% - 2px);
+}
+.clock-line2{
+	width:3px;
+	height: 2px;
+	background: black;
+	top:calc(50% - 1px);
+}
+
+.clock-text{
+            color:black;
+            font-size:2em;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+}
+
+.clock-center,.clock-center:after{
+            position: absolute;
+            top:50%;
+            left:50%;
+            z-index: 15;
+            border-radius: 50%;
+}
+.clock-center{
+            background-color:black ;
+            height:147px;
+            width:147px;
+            transform: translate(-74px,-74px);
+}
+.clock-center:after{
+            content: "";
+            background-color:silver ;
+            height:145px;
+            width:145px;
+            transform: translate(-73px,-73px);
+}
+
+#hour {
+    width: 60px;
+    height:100px;
+    position: absolute;
+    top:237px;
+    left:373px;
+    z-index : 25;
+    padding-top:0px;
+    transform-origin: center 150px;
+}
+#hour div{
+    width: 60px;
+    height:100px;
+    position: absolute;
+    left:0px;
+    background:url(uni.png) no-repeat;
+}
+
+#minute {
+    width: 100px;
+    height:250px;
+    position: absolute;
+    top:100px;
+    left:350px;
+    z-index : 20;
+    padding-top:0px;
+    transform-origin: center 300px;
+}
+#minute div{
+    width:150px;
+    height:250px;
+    left:0px;
+    position:absolute;
+    background:url(kuri.png) no-repeat;
+}
+#second {
+    width: 161px;
+    height:350px;
+    position: absolute;
+    top:20px;
+    left:320px;
+    padding-top:0px;
+    z-index : 30;
+    transform-origin: center 380px;
+    animation: rotation-s 60s linear infinite;
+}
+#second div{
+    width:120px;
+    height:310px;
+    top:40px;
+    left:200px;
+    margin: 3px -3px;
+    background:url(spritesmall.png) no-repeat;
+    animation: byousin 900ms steps(51) infinite;
+}
+@keyframes byousin {
+    to{
+        background-position: -6120px 0;
+    }
+}
+@-webkit-keyframes byousin {
+    to{
+        background-position: -6120px 0;
+    }
+}
+@-moz-keyframes byousin {
+    to{
+        background-position: -6120px 0;
+    }
+}
+
