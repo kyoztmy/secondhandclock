@@ -1,5 +1,3 @@
-$(window).on('load', function(){
-
 const addDiv = (parentDiv, className, callBack = null ) => {
 	const t = document.createElement("div");
 	t.classList.add(className);
@@ -98,4 +96,3 @@ window.addEventListener("DOMContentLoaded", () => {
 	 timeRefreshSecond();
 });
 
-});
