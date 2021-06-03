@@ -51,12 +51,27 @@ const createFace = () =>{
 
 function timeRefresh () {
 	updateClock();
+	updateText();
+	setTimeout(timeRefresh, 1000);
+}
+
+function timeRefreshSecond() {
+	updateSecond();
 	setTimeout(timeRefresh, 60000);
+}
+
+function updateSecond(){
+	var now = moment();
+	var second = now.seconds() * 6;
+
+	var animation = document.createElement("style");
+	animation.innerHTML = "@keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}}";
+	document.head.appendChild(animation);
 }
 
 function updateClock(){
 	var now = moment();
-
+	
 	//秒
 	var second = now.seconds() * 6;
 
@@ -66,19 +81,18 @@ function updateClock(){
 	//時
 	var hour = ((now.hours() % 12) / 12) * 360 + minute / 12;
 
-	
 	$("#hour").css("transform", "rotate(" + hour + "deg)");
 	$("#minute").css("transform", "rotate(" + minute + "deg)");
-	
-	var animation = document.createElement("style");
-	animation.innerHTML = "@keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}}";
-	document.head.appendChild(animation);
-	
-	//$("#second").css("transform", "rotate(" + second + "deg)");
+}
+
+function updateText(){
+    $("#nday").html(moment().format('YYYY/MM/DD'));
+    $("#ntime").html(moment().format('HH:mm:ss'));
 }
 
 window.addEventListener("DOMContentLoaded", () => {
 	 createFace();
 	 timeRefresh();
+	 timeRefreshSecond();
 });
 

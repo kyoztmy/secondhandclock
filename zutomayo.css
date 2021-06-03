@@ -63,6 +63,18 @@
             transform: translate(-73px,-73px);
 }
 
+#dgtime{
+    width:80px;
+    background-color:#223;
+    color:#FFF;
+    text-align:center;
+    top: 380px;
+    z-index: 30;
+    position: absolute;
+    left: 360px;
+    font-size: xx-small;
+}
+
 #hour {
     width: 60px;
     height:100px;
