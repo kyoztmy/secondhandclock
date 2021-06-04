@@ -65,7 +65,7 @@ function updateSecond(){
 	var second = now.seconds() * 6;
 
 	var animation = document.createElement("style");
-	animation.innerHTML = "@keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}}";
+	animation.innerHTML = "@keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}} @-webkit-keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}} @-moz-keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}}";
 	document.head.appendChild(animation);
 }
 
