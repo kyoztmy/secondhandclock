@@ -57,18 +57,16 @@ function timeRefresh () {
 
 function timeRefreshSecond() {
 	updateSecond();
-	setTimeout(timeRefreshSecond, 60000);
+	setTimeout(timeRefresh, 60000);
 }
 
 function updateSecond(){
 	var now = moment();
-	var second = now.seconds() * 6 + 1;
-	
-	document.documentElement.style.setProperty("--byousin-start-deg", second + "deg");
-	document.documentElement.style.setProperty("--byousin-end-deg", (second + 360) + "deg");
-	
-	//var second = now.seconds() * 6;
-	//$("#second").css("transform", "rotate(" + second + "deg)");
+	var second = now.seconds() * 6;
+
+	var animation = document.createElement("style");
+	animation.innerHTML = "@keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}} @-webkit-keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}} @-moz-keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}}";
+	document.head.appendChild(animation);
 }
 
 function updateClock(){
@@ -89,7 +87,7 @@ function updateClock(){
 
 function updateText(){
     $("#nday").html(moment().format('YYYY/MM/DD'));
-    $("#ntime").html(moment().format('HH:mm'));
+    $("#ntime").html(moment().format('HH:mm:ss'));
 }
 
 window.addEventListener("DOMContentLoaded", () => {
