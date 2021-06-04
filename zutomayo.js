@@ -66,7 +66,6 @@ function updateSecond(){
 	
 	document.documentElement.style.setProperty("--byousin-start-deg", second + "deg");
 	document.documentElement.style.setProperty("--byousin-end-deg", (second + 360) + "deg");
-	$("#second").css("animation", "rotation-s 60s linear infinite");
 	
 	//var second = now.seconds() * 6;
 	//$("#second").css("transform", "rotate(" + second + "deg)");
