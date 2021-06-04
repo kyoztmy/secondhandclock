@@ -89,12 +89,14 @@ function updateClock(){
 
 function updateText(){
     $("#nday").html(moment().format('YYYY/MM/DD'));
-    $("#ntime").html(moment().format('HH:mm:ss'));
+    $("#ntime").html(moment().format('HH:mm'));
 }
 
 window.addEventListener("DOMContentLoaded", () => {
 	 createFace();
 	 timeRefresh();
 	 timeRefreshSecond();
+	 
+	 $("#second div").css("background", "url(spritesmall.png) no-repeat");
 });
 
