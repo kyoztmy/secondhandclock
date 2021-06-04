@@ -120,6 +120,7 @@
     z-index : 30;
     transform-origin: center 380px;
     animation: rotation-s 60s linear infinite;
+    background-color: orange;
 }
 #second div{
     width:120px;
@@ -128,6 +129,7 @@
     left:200px;
     margin: 3px -3px;
     background:url(spritesmall.png) no-repeat;
+    background-color: blue;
     animation: byousin 900ms steps(51) infinite;
 }
 @keyframes byousin {

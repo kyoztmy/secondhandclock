@@ -90,7 +90,7 @@ function updateText(){
     $("#ntime").html(moment().format('HH:mm:ss'));
 }
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener('load', () => {
 	 createFace();
 	 timeRefresh();
 	 timeRefreshSecond();
