@@ -62,14 +62,13 @@ function timeRefreshSecond() {
 
 function updateSecond(){
 	var now = moment();
-	var second = now.seconds() * 6;
-
-	var animation = document.createElement("style");
-	animation.innerHTML = "@keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}} @-webkit-keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}} @-moz-keyframes rotation-s {0% {transform: rotate(" + second + "deg)}100% {transform: rotate(" + (second + 360) + "deg)}}";
-	document.head.appendChild(animation);
+	var second = now.seconds() * 6 + 1;
 	
-	//document.documentElement.style.setProperty("--byousin-start-deg", second + "deg");
-	//document.documentElement.style.setProperty("--byousin-end-deg", (second + 360) + "deg");
+	document.documentElement.style.setProperty("--byousin-start-deg", second + "deg");
+	document.documentElement.style.setProperty("--byousin-end-deg", (second + 360) + "deg");
+	
+	//var second = now.seconds() * 6;
+	//$("#second").css("transform", "rotate(" + second + "deg)");
 }
 
 function updateClock(){

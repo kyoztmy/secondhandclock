@@ -1,3 +1,8 @@
+:root {
+    --byousin-start-deg: 0deg;
+    --byousin-end-deg: 0deg;
+}
+
 #clock{
 	height:800px;
 	width:800px;
@@ -128,7 +133,7 @@
     left:200px;
     margin: 3px -3px;
     background:url(spritesmall.png) no-repeat;
-    animation: byousin 900ms steps(51) infinite;
+    animation: byousin 1000ms steps(51) infinite;
 }
 @keyframes byousin {
     to{
@@ -144,4 +149,13 @@
     to{
         background-position: -6120px 0;
     }
+}
+
+@keyframes rotation-s {
+	from{
+		transform: rotate(var(--byousin-start-deg));
+	}
+	to{
+		transform: rotate(var(--byousin-end-deg));
+	}
 }
