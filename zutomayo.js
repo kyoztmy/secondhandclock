@@ -96,7 +96,5 @@ window.addEventListener("DOMContentLoaded", () => {
 	 createFace();
 	 timeRefresh();
 	 timeRefreshSecond();
-	 
-	 $("#second div").css("background", "url(spritesmall.png) no-repeat");
 });
 
